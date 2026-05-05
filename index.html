@@ -77,16 +77,18 @@
     .device-wrap [data-ios="status"],
     .device-wrap [data-ios="island"],
     .device-wrap [data-ios="home"] { display: none !important; }
-    /* Each screen pushed content down 54px to clear the fake status bar.
-       Without it, snap up to the real safe area. */
+    /* Each screen pushed content down 54px to clear the fake status bar. */
     .device-wrap div[style*="top: 54px"] {
       top: env(safe-area-inset-top, 12px) !important;
     }
-    /* Tab bar — drop ALL bottom padding; iOS overlays the home gesture indicator
-       on top of the bottom of the bar, but a thin 4px gives icons just enough breathing room. */
+    /* Tab bar — flush to the bottom edge with minimal padding. */
     .uc-tabbar {
       padding-bottom: 4px !important;
       padding-top: 6px !important;
+    }
+    /* Each screen reserves bottom: 80px for the tab bar; with the new compact bar that left a cream gap. */
+    .device-wrap div[style*="bottom: 80px"] {
+      bottom: 56px !important;
     }
     .hint { bottom: max(20px, env(safe-area-inset-bottom)); }
   }
@@ -108,6 +110,9 @@
     .uc-tabbar {
       padding-bottom: 4px !important;
       padding-top: 6px !important;
+    }
+    .device-wrap div[style*="bottom: 80px"] {
+      bottom: 56px !important;
     }
   }
 
@@ -169,16 +174,16 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
 
-<script type="text/babel" src="src/ios-frame.jsx"></script>
-<script type="text/babel" src="src/hifi/shared.jsx"></script>
-<script type="text/babel" src="src/hifi/store.jsx"></script>
-<script type="text/babel" src="src/hifi/feed.jsx"></script>
-<script type="text/babel" src="src/hifi/profile.jsx"></script>
-<script type="text/babel" src="src/hifi/events.jsx"></script>
-<script type="text/babel" src="src/hifi/chat.jsx"></script>
-<script type="text/babel" src="src/hifi/share.jsx"></script>
-<script type="text/babel" src="src/hifi/extras.jsx"></script>
-<script type="text/babel" src="src/hifi/v3.jsx"></script>
+<script type="text/babel" src="src/ios-frame.jsx?v=4"></script>
+<script type="text/babel" src="src/hifi/shared.jsx?v=4"></script>
+<script type="text/babel" src="src/hifi/store.jsx?v=4"></script>
+<script type="text/babel" src="src/hifi/feed.jsx?v=4"></script>
+<script type="text/babel" src="src/hifi/profile.jsx?v=4"></script>
+<script type="text/babel" src="src/hifi/events.jsx?v=4"></script>
+<script type="text/babel" src="src/hifi/chat.jsx?v=4"></script>
+<script type="text/babel" src="src/hifi/share.jsx?v=4"></script>
+<script type="text/babel" src="src/hifi/extras.jsx?v=4"></script>
+<script type="text/babel" src="src/hifi/v3.jsx?v=4"></script>
 </head>
 <body>
 <div id="root"></div>
