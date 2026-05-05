@@ -73,13 +73,13 @@
     .device-wrap [data-ios="island"],
     .device-wrap [data-ios="home"] { display: none !important; }
     /* Each screen pushed content down 54px to clear the fake status bar.
-       Without it, snap up to the real safe area (iOS lets the user's status bar overlay). */
+       Without it, snap up to the real safe area. */
     .device-wrap div[style*="top: 54px"] {
       top: env(safe-area-inset-top, 12px) !important;
     }
-    /* Tab bar baseline padding accounted for the iOS home pill — replace with safe area. */
-    .device-wrap div[style*="padding-bottom: 28px"][style*="bottom: 0"] {
-      padding-bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    /* Tab bar — drop the iOS-pill reservation, use the real safe area. */
+    .uc-tabbar {
+      padding-bottom: env(safe-area-inset-bottom, 8px) !important;
     }
     .hint { bottom: max(20px, env(safe-area-inset-bottom)); }
   }
@@ -98,8 +98,8 @@
     .device-wrap div[style*="top: 54px"] {
       top: env(safe-area-inset-top, 12px) !important;
     }
-    .device-wrap div[style*="padding-bottom: 28px"][style*="bottom: 0"] {
-      padding-bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    .uc-tabbar {
+      padding-bottom: env(safe-area-inset-bottom, 8px) !important;
     }
   }
 

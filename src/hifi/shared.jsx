@@ -257,12 +257,12 @@ function HFTabBar({ active = 'home' }) {
     { id: 'me',   icon: HFIcon.user, label: 'Me', go: 'profile' },
   ];
   return (
-    <div style={{
+    <div className="uc-tabbar" style={{
       position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 30,
       paddingBottom: 28, paddingTop: 10,
       background: HF.paper,
       borderTop: `1px solid ${HF.ruleSft}`,
-      display: 'flex', justifyContent: 'space-around', alignItems: 'flex-start',
+      display: 'flex', justifyContent: 'space-evenly', alignItems: 'flex-start',
       backdropFilter: 'blur(8px)',
     }}>
       {items.map((it) => {
